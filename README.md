@@ -15,13 +15,13 @@ in **IPv4-Adresse** und **CIDR-Präfix** und berechnet, nach dem Validieren der 
 `10.12.77.180/21`
 
 ```
-Gegeben:                        10.12.77.180/21
-Subnetmaske:                 255.255.248.0
+Gegeben:                    10.12.77.180/21
+Subnetmaske:                255.255.248.0
 Netzadressen:       {
-    'Netzadresse': '           10.12.72.0',
+    'Netzadresse': '        10.12.72.0',
     'Broadcastadresse': '   10.12.79.255',
-    'Nutzbare Hosts':        2046,
-    'Blockgröße':               8
+    'Nutzbare Hosts':       2046,
+    'Blockgröße':           8
 }
 ```
 
