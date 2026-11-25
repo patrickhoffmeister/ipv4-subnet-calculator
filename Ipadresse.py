@@ -16,7 +16,7 @@ class Ipadresse:
             return False
         
         ip, cidr = input_ip.split("/")
-        if not 0 < int(cidr) <= 32:
+        if not 0 <= int(cidr) <= 32:
             return False
         
         for oktett in ip.split("."):
@@ -59,12 +59,12 @@ class Ipadresse:
             blockgröße = 1
             nutzbare_hosts = 1
             na_name = "Einzige Adresse"
-            bc_name = "Einzige Adresse"
+            bc_name = na_name
         elif self.cidr == 31:
             nutzbare_hosts = 2
             na_name = "Erste Adresse"
             bc_name = "Letzte Adresse"
-
+        
         netzadresse = [ip_liste[oktett-1] // blockgröße * blockgröße]
         for i in range(int(oktett) -1):
             netzadresse.insert(i, ip_liste[i])
@@ -79,6 +79,9 @@ class Ipadresse:
 
         netzadresse = self.ipliste2string(netzadresse)
         broadcastadresse = self.ipliste2string(broadcastadresse)
+
+        if self.cidr == 0:
+            blockgröße = 0
 
         self.netzadressen = {
             f"{na_name}": netzadresse, 
